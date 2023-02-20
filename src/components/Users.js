@@ -19,10 +19,7 @@ export default function Users() {
   //axios kullanımı
   useEffect(() => {
     axios("https://jsonplaceholder.typicode.com/users")
-      .then((data) => {
-        setUsers(data);
-        // setLoading(false);
-      })
+      .then((response) => setUsers(response.data))
       .catch((e) => console.log(e))
       .finally(() => setIsLoading(false));
   });
